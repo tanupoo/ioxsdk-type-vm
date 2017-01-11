@@ -1,0 +1,43 @@
+descriptor-schema-version: "2.2"
+info:
+  name: VM
+  description: "Ubuntu VM for Fog Horn"
+  version: "0.1"
+  author-link: "http://www.cisco.com/"
+  author-name: "Cisco Systems"
+
+app:
+  type: vm
+  cpuarch: "x86_64"
+  resources:
+    profile: custom
+    devices:
+           -
+                type: usbport 
+                label: HOST_DEV111
+                usage: This is for hokkaido usb111 
+    cpu: "7318"
+    disk: "10"
+    vcpu: "4"
+    cpu-topology:
+        sockets-per-core: "1"
+        cores: "4"
+    # 3G memory
+    memory: "3200"
+    network:
+      -
+        interface-name: eth0
+      -
+        interface-name: eth1
+
+    graphics:
+      vnc: true
+
+  startup:
+    #ostype: windows
+    qemu-guest-agent: false
+
+    disks:
+      - target-dev: hda
+        file: file://ubuntu1404-4G.raw
+

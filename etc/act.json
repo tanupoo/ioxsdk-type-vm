@@ -1,0 +1,29 @@
+{
+  "resources": {
+    "profile":"custom",
+    "network": [{
+      "interface-name":"eth0",
+      "network-name":"iox-bridge0"
+    }, {
+      "interface-name":"eth1",
+      "network-name":"iox-bridge1"
+    } ],
+    "devices":[{
+      "device-id":"usb1/1-1",
+      "port-num":"undefined",
+      "bus-num":"undefined",
+      "type":"usbport",
+      "label":"HOST_DEV111"}],
+    "cpu":"7318",
+    "memory":"3200",
+    "vcpu":"4",
+    "cpu-topology":{
+      "sockets-per-core": "1",
+      "cores": "4"},
+    "graphics": {
+      "vnc":"true",
+      "vnc-password":"hirakegoma"
+    }
+  },
+  "auto_start": true
+}
